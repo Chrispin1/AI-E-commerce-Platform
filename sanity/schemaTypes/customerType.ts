@@ -15,7 +15,10 @@ export const customerType = defineType({
       name: "email",
       type: "string",
       group: "details",
-      validation: (rule) => [rule.required().error("Email is required")],
+      validation: (rule) => [
+        rule.required().error("Email is required"),
+        rule.email().error("Invalid Email format"),
+      ],
     }),
     defineField({
       name: "name",
